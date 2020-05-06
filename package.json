@@ -1,0 +1,16 @@
+{
+  "name": "reporting-system",
+  "version": "1.0.0",
+  "description": "weekly reporthing system for our team",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "harshareddu794",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.12"
+  }
+}
