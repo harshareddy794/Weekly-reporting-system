@@ -1,2 +1,10 @@
 <h1>This is reports page</h1>
-<%= reports %>
+
+<% reports.forEach(function(report){ %>
+    <p><%= report.user %></p>
+    <p><%= report.date %></p>
+    <p><%= report.desc %></p>
+    <hr>
+<% }) %>
+
+<a href="/reports/new">New</a>
