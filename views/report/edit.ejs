@@ -1,0 +1,17 @@
+<%- include("../partials/header") -%>
+<h2>Edit post by <%= report.user %></h1>
+<form action="/report/<%= report._id %>?method=PUT" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" name="user" value="<%= report.user %>">
+    </div>
+    <div class="form-group">
+        <input type="date" class="form-control" name="date" value="<%= report.date %>">
+    </div>
+    <div class="form-group">
+        <textarea name="desc" class="form-control" cols="30" rows="10"><%= report.desc %></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="submit">
+    </div>
+</form>
+<%- include("../partials/footer") -%>

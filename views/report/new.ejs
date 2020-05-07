@@ -1,6 +1,16 @@
-<form action="/reports" method="post">
-    <input type="text" name="user" placeholder="enter username">
-    <input type="date" name="date" placeholder="enter date" >
-    <textarea name="desc" placeholder="Enter full report" cols="30" rows="10"></textarea>
+<%- include("../partials/header") -%>
+
+<form action="/report" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" name="user" placeholder="enter username">
+    </div>
+    <div class="form-group">
+        <input type="date" class="form-control" name="date" placeholder="enter date" >
+    </div>
+    <div class="form-group">
+        <textarea name="desc" class="form-control" placeholder="Enter full report" cols="30" rows="10"></textarea>
+    </div>
     <input type="submit" value="submit">
 </form>
+
+<%- include("../partials/footer") -%>
