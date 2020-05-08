@@ -11,101 +11,48 @@ app.use(methodOverride("method"))
 var mongoose=require("mongoose")
 mongoose.connect("mongodb://localhost/weeklyreport",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true})
 
-var reportschema=new mongoose.Schema({
-    user:String,
-    date:String,
-    desc:String
-})
-
 //++++++++++ Models ++++++++++++++++++
-
-var report=require("./models/report")
-
+var user=require("./models/user")
 
 
+//++++++++++++ Passport initilize ++++++++++++++++++++
+var passport=require("passport")
+var localStratagy=require("passport-local")
+var expressSessions=require("express-session")
 
-//++++++++++++++ Routes ++++++++++++++
+app.use(expressSessions({
+    secret:"Hello",
+    resave: false,
+    saveUninitialized :false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+//++++++++++++ Passport use ++++++++++++++++++++
+passport.use(new localStratagy(user.authenticate()))
+passport.serializeUser(user.serializeUser())
+passport.deserializeUser(user.deserializeUser())
+
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user
+    next();
+ });
+
+
+//++++++++++++++ Routes import ++++++++++++++
+var reportRoutes=require("./routes/report")
+var userRoutes=require("./routes/user")
+//++++++++++++++ Routes use ++++++++++++++
 
 app.get("/",function(req,res){
     res.render("landing.ejs")
 })
 
-
-app.get("/report",function(req,res){
-    report.find(function(err,reports){
-        if(err){
-            console.log(err)
-        }else{
-            res.render("report/reports",{reports:reports})
-
-        }
-    })
-})
-
-
-//create
-app.get("/report/new",function(req,res){
-    res.render("report/new")
-})
-
-app.post("/report",function(req,res){
-    var newReport={
-    user:req.body.user,
-    date:req.body.date,
-    desc:req.body.desc
-}
-    report.create(newReport,function(err,report){
-        if(err){
-            console.log(err)
-        }else{
-            res.redirect("/report")
-        }
-
-    })
-})
-
-
-
-
-
-//Update
-app.get("/report/:id/edit",function(req,res){
-    report.findById(req.params.id,function(err,foundReport){
-        if(err){
-            console.log(err)
-        }else{
-            res.render("report/edit",{report:foundReport})
-        }
-    })
-})
-
-app.put("/report/:id",function(req,res){
-    var data={
-        user:req.body.user,
-        date:req.body.date,
-        desc:req.body.desc 
-    }
-    report.findByIdAndUpdate(req.params.id,data,function(err,updatedReport){
-        if(err){
-            console.log(err)
-        }else{
-            res.redirect("/report")
-        }
-    })
-})
-
-
-
-//Delete
-app.delete("/report/:id",function(req,res){
-    report.findByIdAndRemove(req.params.id,function(err){
-        if(err){
-            console.log(err)
-        }else{
-            res.redirect("/report")
-        }
-    })
-})
+app.use(reportRoutes)
+app.use(userRoutes)
+//++++++++++++ Other routes+++++++++++++++++++++
 
 
 app.listen(3000,"127.0.0.1",function(req,res){
