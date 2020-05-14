@@ -6,6 +6,8 @@ var  bodyparser=require("body-parser")
 app.use(bodyparser.urlencoded({extended:true}))
 var methodOverride= require("method-override")
 app.use(methodOverride("method"))
+var flash = require('connect-flash');
+app.use(flash());
 
 //++++++++++ Mongoose ++++++++++++
 var mongoose=require("mongoose")
@@ -37,6 +39,8 @@ passport.deserializeUser(user.deserializeUser())
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user
+    res.locals.error=req.flash("error")
+    res.locals.success= req.flash("success")
     next();
  });
 

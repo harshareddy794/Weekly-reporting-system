@@ -1,0 +1,31 @@
+<%- include("../partials/header") -%>
+<div class="container">
+    <div class="user">
+        <div class="details">
+            <p><strong>Name: </strong> <%= foundUser.name %>  </p>
+            <p><strong>Email: </strong> <%= foundUser.email %> </p>
+            <p><strong>User id: </strong> <%= foundUser.username %> </p>
+            <a href="/user/<%= currentUser._id %>/edit" class="btn btn-info">Edit Profile</a>
+        </div>
+        <hr><hr><hr><hr>
+        <div class="reports">
+           <% foundReports.forEach(function(report){ %>
+                <p><%=report.desc %></p>
+                <p>Date: <%= report.date %></p>
+                <%if((report.user.id).equals(currentUser._id)){ %>
+                    <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="/report/<%= report._id %>?method=DELETE" method="post">
+                        <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                    </form>
+                    <% } %>
+                <hr>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%- include("../partials/footer") -%>

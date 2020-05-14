@@ -1,14 +1,11 @@
 <%- include("../partials/header") -%>
-<h2>Edit post by <%= report.user %></h1>
+<h2>Edit post by <%= report.user.username %></h1>
 <form action="/report/<%= report._id %>?method=PUT" method="post">
     <div class="form-group">
-        <input type="text" class="form-control" name="user" value="<%= report.user %>">
+        <input type="date" class="form-control" name="date" value="<%= report.date %>" required>
     </div>
     <div class="form-group">
-        <input type="date" class="form-control" name="date" value="<%= report.date %>">
-    </div>
-    <div class="form-group">
-        <textarea name="desc" class="form-control" cols="30" rows="10"><%= report.desc %></textarea>
+        <textarea name="desc" class="form-control" cols="30" rows="10" required><%= report.desc %></textarea>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary" value="submit">

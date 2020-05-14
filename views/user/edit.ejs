@@ -1,0 +1,14 @@
+<%- include("../partials/header") -%>
+<h1>Edit page</h1>
+<form action="/user/<%= foundUser._id %>?method=PUT" method="post">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control" value="<%= foundUser.name %>" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email"class="form-control" value="<%= foundUser.email %>" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Signup" class="btn btn-primary">
+    </div>
+</form>
+<%- include("../partials/footer") -%>

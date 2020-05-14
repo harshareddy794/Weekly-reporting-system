@@ -1,16 +1,23 @@
 <%- include("../partials/header") -%>
-<h1>This is reports page</h1>
+<div class="container">
+    <h1>This is reports page</h1>
+    <% reports.forEach(function(report){ %>
+            <p>Decription: <%= report.desc %></p>
+            <p>
+                User: <a href="/user/<%= report.user.id %>"><%= report.user.username %></a>
+            </p>
+            <p>Date: <%= report.date %></p>
+            <%if((report.user.id).equals(currentUser._id)){ %>
+            <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+            <form action="/report/<%= report._id %>?method=DELETE" method="post">
+                <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+            </form>
+            <% } %>
+            <hr> 
+    <% }) %>
 
-<% reports.forEach(function(report){ %>
-    <p>User: <%= report.user %></p>
-    <p>Date: <%= report.date %></p>
-    <p>Decription: <%= report.desc %></p>
-    <a href="/report/<%= report._id %>/edit">Edit</a>
-    <form action="/report/<%= report._id %>?method=DELETE" method="post">
-        <input type="submit" value="Delete">
-    </form>
-    <hr>
-<% }) %>
+    <a href="/report/new" class="btn btn-primary btn-sm">New</a>
 
-<a href="/report/new">New</a>
+</div>
 <%- include("../partials/footer") -%>
+
