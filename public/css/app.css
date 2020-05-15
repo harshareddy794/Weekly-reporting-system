@@ -2,6 +2,10 @@ h2{
     padding-top: 25px;
     text-align: center;
 }
+h4{
+    padding: 20px 0 25px 0;
+    text-align: center;
+}
 .form-group{
     width: 75%;
     padding-left:25% ;
@@ -9,4 +13,23 @@ h2{
 }
 form{
     padding-top: 25px;
+}
+.container{
+    padding-top: 2%;
+}
+.reports{
+    background-color: rgba(00, 00, 00, 0.1);
+    margin-bottom: 15px;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+.container a{
+
+    margin-bottom: 10px;
+}
+.details{
+    width: 40%;
+}
+.user-report{
+    display: inline;
 }
