@@ -1,5 +1,5 @@
 <%- include("../partials/header") -%>
-<h1>Edit page</h1>
+<h2>Edit page</h2>
 <form action="/user/<%= foundUser._id %>?method=PUT" method="post">
     <div class="form-group">
         <input type="text" name="name" class="form-control" value="<%= foundUser.name %>" required>

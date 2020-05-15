@@ -4,7 +4,7 @@ var report=require("../models/report")
 
 
 router.get("/report",isLoggedIn,function(req,res){
-    report.find().limit(15).sort({createdAt:-1}).exec(function(err,reports){
+    report.find().limit(25).sort({createdAt:-1}).exec(function(err,reports){
         if(err){
             req.flash("error","Some  thing went wrong")
             res.redirect("back")

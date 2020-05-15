@@ -1,5 +1,7 @@
 <%- include("../partials/header") -%>
 
+<h2>New Report</h2>
+
 <form action="/report" method="post">
     <div class="form-group">
         <input type="date" class="form-control" name="date" placeholder="enter date" required>
@@ -7,7 +9,9 @@
     <div class="form-group">
         <textarea name="desc" class="form-control" placeholder="Enter full report" cols="30" rows="10" required></textarea>
     </div>
-    <input type="submit" value="submit">
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="submit">
+    </div>
 </form>
 
 <%- include("../partials/footer") -%>

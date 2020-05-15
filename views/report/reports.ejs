@@ -1,23 +1,21 @@
 <%- include("../partials/header") -%>
 <div class="container">
-    <h1>This is reports page</h1>
+    <h2>Reports</h2>
+    <a href="/report/new" class="btn btn-primary btn-sm">New Report</a>
     <% reports.forEach(function(report){ %>
-            <p>Decription: <%= report.desc %></p>
+        <div class="reports">
+            <p>Report: <strong><%= report.desc %></strong> </p>
             <p>
-                User: <a href="/user/<%= report.user.id %>"><%= report.user.username %></a>
+               Report by  <a href="/user/<%= report.user.id %>"><%= report.user.username %></a>
+               on Date: <%= report.date %>
             </p>
-            <p>Date: <%= report.date %></p>
             <%if((report.user.id).equals(currentUser._id)){ %>
-            <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
-            <form action="/report/<%= report._id %>?method=DELETE" method="post">
-                <input class="btn btn-danger btn-sm" type="submit" value="Delete">
-            </form>
+                    <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                    <form style="display: inline;" action="/report/<%= report._id %>?method=DELETE" method="post">
+                        <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                    </form> 
             <% } %>
-            <hr> 
+        </div>
     <% }) %>
-
-    <a href="/report/new" class="btn btn-primary btn-sm">New</a>
-
 </div>
 <%- include("../partials/footer") -%>
-

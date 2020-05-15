@@ -1,29 +1,34 @@
 <%- include("../partials/header") -%>
 <div class="container">
-    <div class="user">
-        <div class="details">
-            <p><strong>Name: </strong> <%= foundUser.name %>  </p>
-            <p><strong>Email: </strong> <%= foundUser.email %> </p>
-            <p><strong>User id: </strong> <%= foundUser.username %> </p>
-            <a href="/user/<%= currentUser._id %>/edit" class="btn btn-info">Edit Profile</a>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="user">
+                <div class="details">
+                    <p><strong>Name: </strong> <%= foundUser.name %>  </p>
+                    <p><strong>Email: </strong> <%= foundUser.email %> </p>
+                    <p><strong>User id: </strong> <%= foundUser.username %> </p>
+                    <a href="/user/<%= currentUser._id %>/edit" class="btn btn-info">Edit Profile</a>
+                </div>
+            </div>
         </div>
-        <hr><hr><hr><hr>
-        <div class="reports">
-           <% foundReports.forEach(function(report){ %>
-                <p><%=report.desc %></p>
-                <p>Date: <%= report.date %></p>
-                <%if((report.user.id).equals(currentUser._id)){ %>
-                    <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
-                    <form action="/report/<%= report._id %>?method=DELETE" method="post">
-                        <input class="btn btn-danger btn-sm" type="submit" value="Delete">
-                    </form>
+        <div class="col-md-7">
+            <h4>Reports</h4>
+            <% foundReports.forEach(function(report){ %>
+                <div class="report">
+                    <p>Report: <strong> <%=report.desc %></strong></p>
+                    <p>Date: <%= report.date %></p>
+                    <%if((report.user.id).equals(currentUser._id)){ %>
+                        <a href="/report/<%= report._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="/report/<%= report._id %>?method=DELETE" method="post" style="display: inline;">
+                            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+                        </form>
                     <% } %>
+                </div> 
                 <hr>
             <% }) %>
         </div>
     </div>
 </div>
-
 
 
 
