@@ -1,0 +1,36 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=778&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Header{
+    text-align: center;
+    color: white;
+    padding-top: 5%;
+}
+.Header h1
+{
+    text-shadow: 2px 2px 4px black;
+
+}
+.link{
+    margin-top: 2%;
+}
+h1:nth-of-type(1){
+    font-family: 'Balsamiq Sans', cursive;
+    color: white;
+}
+h1:nth-of-type(2){
+    font-family: 'Pacifico', cursive;
+}
+h1:nth-of-type(3){
+    font-family: 'Shadows Into Light', cursive;
+}
+h1:nth-of-type(4){
+    font-family: 'Balsamiq Sans', cursive;
+}
