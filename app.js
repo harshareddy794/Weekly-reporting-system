@@ -8,13 +8,15 @@ var methodOverride= require("method-override")
 app.use(methodOverride("method"))
 var flash = require('connect-flash');
 app.use(flash());
-require('dotenv').config()
-
+require('dotenv').config();
 
 //++++++++++ Mongoose ++++++++++++
 var mongoose=require("mongoose")
-mongoose.connect("mongodb://localhost/weeklyreport",{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true})
-
+mongoose.connect(process.env.URL,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true},function(err){
+    if(err){
+        console.log("cannot connect to database")
+    }
+})
 //++++++++++ Models ++++++++++++++++++
 var user=require("./models/user")
 
