@@ -1,5 +1,5 @@
 <%- include("../partials/header") -%>
-<h2>Edit post by <%= report.user.username %></h1>
+<h2>Editing post by <%= report.user.username %> on <%= report.date %></h1>
 <form action="/report/<%= report._id %>?method=PUT" method="post">
     <div class="form-group">
         <input type="date" class="form-control" name="date" value="<%= report.date %>" required>
