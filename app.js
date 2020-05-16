@@ -8,6 +8,8 @@ var methodOverride= require("method-override")
 app.use(methodOverride("method"))
 var flash = require('connect-flash');
 app.use(flash());
+require('dotenv').config()
+
 
 //++++++++++ Mongoose ++++++++++++
 var mongoose=require("mongoose")
@@ -23,7 +25,7 @@ var localStratagy=require("passport-local")
 var expressSessions=require("express-session")
 
 app.use(expressSessions({
-    secret:"Hello",
+    secret:process.env.SECRET,
     resave: false,
     saveUninitialized :false
 }))
@@ -59,6 +61,6 @@ app.use(userRoutes)
 //++++++++++++ Other routes+++++++++++++++++++++
 
 
-app.listen(3000,"127.0.0.1",function(req,res){
+app.listen(process.env.PORT,process.env.IP,function(req,res){
     console.log("app is listining")
 })
