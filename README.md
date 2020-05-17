@@ -1,7 +1,14 @@
-![2](https://user-images.githubusercontent.com/48166328/82139233-0e19ee80-9844-11ea-817d-89b7ab45ae01.PNG)
 # Weekly-reporting-system
-
-### Badges
+![2](https://user-images.githubusercontent.com/48166328/82139233-0e19ee80-9844-11ea-817d-89b7ab45ae01.PNG)
+[![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://GitHub.com/Naereen/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
+[![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
+[![ForTheBadge winter-is-coming](http://ForTheBadge.com/images/badges/winter-is-coming.svg)](http://ForTheBadge.com)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 ## Introduction
 This Project is developed for taking weekly work progress from my team:bar_chart:. A weekly report is nothing but noting what they learnt or done in the whole week. In order to provide everyone with good resources:books: and to keep them motivated a weekly report is mandatory. In that view we developed our own website which makes our work easy. We have depolyed our project at https://achievers-weekly-report.herokuapp.com/
@@ -58,3 +65,7 @@ Thank you every who helped me in building such an amazing project. Looking forwa
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Updates
+* Admin role
+* Automated ime based email remainder
