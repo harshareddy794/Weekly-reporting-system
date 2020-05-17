@@ -51,7 +51,7 @@ node app.js
 **Login page**
 ![3](https://user-images.githubusercontent.com/48166328/82139904-36f0b280-9849-11ea-95fb-bcb909e0e012.PNG)
 
-## contribution
+## Contribution
 Every one who love open source projects and web developement can contribute to my project :innocent: .Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. 
 Every contribution is valuable and if you feel any issues in the project feel free to open an issue :fist:. Any suggations or improvements feel free to contact :heart:
 
