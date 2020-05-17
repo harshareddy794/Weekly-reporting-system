@@ -5,7 +5,8 @@
 ### Badges
 
 ## Introduction
-This Project is developed for taking weekly work progress from my team.A weekly report is nothing but noting what they learnt or done in the whole week. In order to provide everyone with good resources and to keep them motivated a weekly report is mandatory. In that view we developed our own website which makes our work easy. We have depolyed our project at https://achievers-weekly-report.herokuapp.com/
+This Project is developed for taking weekly work progress from my team:bar_chart:. A weekly report is nothing but noting what they learnt or done in the whole week. In order to provide everyone with good resources:books: and to keep them motivated a weekly report is mandatory. In that view we developed our own website which makes our work easy. We have depolyed our project at https://achievers-weekly-report.herokuapp.com/
+
 
 ## Built with
 ### Fornt end
@@ -31,17 +32,19 @@ npm install
 ```bash 
 node app.js
 ```
+
 ## contribution
-Every one who love open source projects and web developement can contribute to my project :heart: .Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. 
-Every contribution is valuable and if you feel any issues in the project feel free to open an issue :fist:. Any suggations or improvements feel free to contact
+Every one who love open source projects and web developement can contribute to my project :innocent: .Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated. 
+Every contribution is valuable and if you feel any issues in the project feel free to open an issue :fist:. Any suggations or improvements feel free to contact :heart:
 
 ## Contact
+
 **Email:** harshareddy794@gmail.com
 
 **LinkedIn:** www.linkedin.com/in/harshareddy794
 
 ## Acknowledgement
-Thank you every who helped me in building such an amazing project. Looking forward to build more amazing projects
+Thank you every who helped me in building such an amazing project. Looking forward to build more amazing projects :heart_eyes:
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
