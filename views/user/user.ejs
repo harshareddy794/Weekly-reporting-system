@@ -7,7 +7,9 @@
                     <p><strong>Name: </strong> <%= foundUser.name %>  </p>
                     <p><strong>Email: </strong> <%= foundUser.email %> </p>
                     <p><strong>User id: </strong> <%= foundUser.username %> </p>
-                    <a href="/user/<%= currentUser._id %>/edit" class="btn btn-info">Edit Profile</a>
+                    <%if((foundUser._id).equals(currentUser._id)){ %>
+                        <a href="/user/<%= currentUser._id %>/edit" class="btn btn-info">Edit Profile</a>
+                    <% } %>                        
                 </div>
             </div>
         </div>

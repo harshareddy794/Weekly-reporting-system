@@ -25,7 +25,11 @@
             <h1>Great</h1>
             <h1>Things take time</h1>
             <div class="link">
-                <a href="/login" class="btn btn-info">Login</a>
+                <% if(!currentUser){ %>
+                    <a href="/login" class="btn btn-info">Login</a>
+                <% }else{ %>
+                    <a href="/report" class="btn btn-info">Reports</a>
+                <% }  %>
             </div>
         </div>
    
